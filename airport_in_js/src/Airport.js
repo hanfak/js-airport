@@ -6,5 +6,6 @@ function Airport() {
     this.planes.push(plane);
   };
   Airport.prototype.allowTakeOff = function(plane){
-    this.planes.delete(plane);
+    index = this.planes.indexOf(plane);
+    this.planes.splice(index, 1);
   };

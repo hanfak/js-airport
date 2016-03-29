@@ -27,11 +27,11 @@ describe("Plane", function() {
   describe("#takeoff", function() {
     it("is flying after takeoff", function() {
       plane.land(airport);
-      plane.takeOff();
+      plane.takeOff(airport);
       expect(plane.flying).toBeTruthy();
     });
     it("throws an error if plane already flying", function() {
-      expect(function() {plane.takeOff();}).toThrowError("A flying plane cannot takeoff")
+      expect(function() {plane.takeOff(airport);}).toThrowError("A flying plane cannot takeoff")
     });
   });
 

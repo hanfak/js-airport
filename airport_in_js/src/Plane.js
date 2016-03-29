@@ -11,11 +11,12 @@ Plane.prototype.land = function(airport) {
   }
 };
 
-Plane.prototype.takeOff = function() {
+Plane.prototype.takeOff = function(airport) {
   if (this.flying === true) {
     throw new Error("A flying plane cannot takeoff")
   }
   else {
+    airport.allowTakeOff(this)
     this.flying = true;
   };
 };
