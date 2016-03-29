@@ -5,4 +5,8 @@ var Airport = function(){
     this.planes.push(plane);
   };
 
+  Airport.prototype.takeOff = function(plane) {
+    planeToTakeOff = this.planes.indexOf(plane);
+    this.planes.splice(planeToTakeOff,1);
+  };
 };
