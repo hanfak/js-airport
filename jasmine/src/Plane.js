@@ -1,8 +1,16 @@
 var Plane = function(){
-  this.flying = true;
+  this.status = false;
 
-  Plane.prototype.isFlying = function(){
-    return true;
+  Plane.prototype.atAirport = function(){
+    return this.status;
+  };
+
+  Plane.prototype.landed = function(){
+    return this.status = true;
+  };
+
+  Plane.prototype.takenOff = function(){
+    return this.status = false;
   };
 
 };
