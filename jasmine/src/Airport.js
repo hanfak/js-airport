@@ -2,6 +2,9 @@ var Airport = function(){
   this.planes = [];
 
   Airport.prototype.land = function(plane) {
+    if (this.isStormy() === true) {
+      throw new Error('Cannot land during storm');
+    }
     plane.landed();
     this.planes.push(plane);
   };
