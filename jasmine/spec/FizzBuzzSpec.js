@@ -15,7 +15,16 @@ describe("FizzBuzz", function() {
 
   it('prints Fizz for any number divisible by 3', function(){
     expect(fizzbuzz.play()[2]).toEqual('Fizz');
+    expect(fizzbuzz.play()[32]).toEqual('Fizz');
+  });
 
+  it('prints Buzz for any number divisible by 5', function(){
+    expect(fizzbuzz.play()[4]).toEqual('Buzz');
+  });
+
+  it('prints FizzBuzz for any number divisible by 3 and 5', function(){
+    expect(fizzbuzz.play()[29]).toEqual('FizzBuzz');
+    expect(fizzbuzz.play()[74]).toEqual('FizzBuzz');
   });
 
 
