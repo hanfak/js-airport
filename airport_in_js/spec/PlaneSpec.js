@@ -1,10 +1,10 @@
 describe("Plane", function() {
   var plane;
-  // var airport;
+  var airport;
 
   beforeEach(function() {
     plane = new Plane();
-    // airport = new Airport();
+    airport = new Airport();
   });
 
   describe("#flying", function() {
@@ -15,18 +15,18 @@ describe("Plane", function() {
 
   describe("#landing", function() {
     it("is not flying", function() {
-      plane.land();
+      plane.land(airport);
       expect(plane.flying).toBeFalsy();
     });
     it("throws an error if plane already landed", function() {
-      plane.land();
-      expect(function() {plane.land();}).toThrowError("You cannot land a landed plane")
+      plane.land(airport);
+      expect(function() {plane.land(airport);}).toThrowError("You cannot land a landed plane")
     });
   });
 
   describe("#takeoff", function() {
     it("is flying after takeoff", function() {
-      plane.land();
+      plane.land(airport);
       plane.takeOff();
       expect(plane.flying).toBeTruthy();
     });
