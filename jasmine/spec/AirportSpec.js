@@ -4,6 +4,7 @@ describe("Airport", function(){
 
   beforeEach(function(){
     airport = new Airport();
+    plane = new Plane();
   });
 
   it('has a way to store planes', function() {
@@ -16,6 +17,10 @@ describe("Airport", function(){
 
   it('has a way to take off planes', function() {
     expect(airport.takeOff).not.toBeUndefined();
+  });
+
+  it('checks for storms', function(){
+    expect(airport.isStormy()).toEqual(false);
   });
 
 });
