@@ -18,9 +18,4 @@ describe("Airport", function(){
   it('has a way to take off planes', function() {
     expect(airport.takeOff).not.toBeUndefined();
   });
-
-  it('checks for storms', function(){
-    expect(airport.isStormy()).toEqual(false);
-  });
-
 });

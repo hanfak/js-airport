@@ -1,8 +1,9 @@
-var Airport = function(){
+var Airport = function(weather){
+  this._weather = typeof weather !== 'undefined' ? weather : new Weather();
   this.planes = [];
 
   Airport.prototype.land = function(plane) {
-    if (this.isStormy() === true) {
+    if (this._weather.isStormy() === true) {
       throw new Error('Cannot land during storm');
     }
     plane.landed();
@@ -10,7 +11,7 @@ var Airport = function(){
   };
 
   Airport.prototype.takeOff = function(plane) {
-    if (this.isStormy() === true) {
+    if (this._weather.isStormy() === true) {
       throw new Error('Cannot take off during storm');
     }
       plane.takenOff();
@@ -18,7 +19,4 @@ var Airport = function(){
       this.planes.splice(planeToTakeOff,1);
   };
 
-  Airport.prototype.isStormy = function() {
-      return false;
-  };
 };
