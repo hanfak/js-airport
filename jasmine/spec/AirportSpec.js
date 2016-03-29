@@ -1,8 +1,8 @@
 describe("Airport", function(){
   var plane;
-  var airport = new Airport();
+  var airport;
 
-  afterEach(function(){
+  beforeEach(function(){
     airport = new Airport();
   });
 
@@ -10,18 +10,8 @@ describe("Airport", function(){
     expect(airport.planes.length).toEqual(0);
   });
 
-  describe("Landing planes", function(){
-    it('stores a plane', function() {
-      airport.land(plane);
-      expect(airport.planes).toContain(plane);
-    });
+  it('has a way to land planes', function() {
+    expect(airport.land).not.toBeUndefined();
   });
 
-  describe("Take off a plane", function(){
-    it('removes a plane from aiport', function(){
-      airport.land(plane);
-      airport.takeOff(plane);
-      expect(airport.planes).not.toContain(plane);
-    });
-  });
 });
